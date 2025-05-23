@@ -27,7 +27,7 @@ export const todoSlice = createSlice({
       }
       state.currentTodo = null;
     },
-    clearCurrentTodo: state => {
+    cancelEditTodo: state => {
       state.currentTodo = null;
     },
   },
@@ -36,7 +36,7 @@ export const todoSlice = createSlice({
 export const {
   addTodo,
   deleteTodo,
-  clearCurrentTodo,
+  cancelEditTodo,
   setCurrentTodo,
   updateTodo,
 } = todoSlice.actions;

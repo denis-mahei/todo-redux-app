@@ -7,7 +7,6 @@ import { useDispatch } from 'react-redux';
 
 export const App = () => {
   const dispatch = useDispatch();
-  console.log(dispatch);
   return (
     <>
       <Header />
