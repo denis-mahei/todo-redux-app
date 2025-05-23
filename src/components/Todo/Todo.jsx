@@ -1,20 +1,18 @@
-import { Text } from 'components';
+import Text from '../Text/Text.jsx';
 import GridItem from '../GridItem/GridItem.jsx';
 import { RiDeleteBinLine, RiEdit2Line } from 'react-icons/ri';
 import style from './Todo.module.css';
 import { useDispatch } from 'react-redux';
 
 const Todo = ({ id, counter, text }) => {
-  const dispatch = useDispatch();
-  console.log(dispatch);
   return (
     <GridItem>
       <div className={style.box}>
         <Text textAlign="center" marginBottom="20">
-          TODO # 1
+          TODO # {counter + 1}
         </Text>
 
-        <Text>Text todo 1</Text>
+        <Text>{text}</Text>
         <button className={style.deleteButton} type="button">
           <RiDeleteBinLine size={24} />
         </button>
