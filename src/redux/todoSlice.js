@@ -40,4 +40,5 @@ export const {
   setCurrentTodo,
   updateTodo,
 } = todoSlice.actions;
+
 export const todoReducer = todoSlice.reducer;

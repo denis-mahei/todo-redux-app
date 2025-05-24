@@ -1,11 +1,12 @@
 import Text from '../Text/Text';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { selectTodos } from '../../redux/selectors.js';
 import Todo from '../Todo/Todo.jsx';
 import Grid from '../Grid/Grid.jsx';
 
 const TodoList = () => {
   const todos = useSelector(selectTodos);
+
   return (
     <>
       {todos.length > 0 ? (
