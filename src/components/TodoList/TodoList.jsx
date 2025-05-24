@@ -1,8 +1,8 @@
-import Text from '../Text/Text';
 import { useSelector } from 'react-redux';
 import { selectVisibleTodos } from '../../redux/selectors.js';
 import Todo from '../Todo/Todo.jsx';
 import Grid from '../Grid/Grid.jsx';
+import Text from '../Text/Text';
 
 const TodoList = () => {
   const todos = useSelector(selectVisibleTodos);

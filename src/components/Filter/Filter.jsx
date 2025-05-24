@@ -1,19 +1,25 @@
-import style from './Filter.module.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectFilter } from '../../redux/selectors.js';
+import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useDebounce } from 'use-debounce';
 import { setFilter } from '../../redux/filterSlice.js';
+import style from './Filter.module.css';
 
 const Filter = () => {
+  const [inputValue, setInputValue] = useState('');
   const dispatch = useDispatch();
-  const filter = useSelector(selectFilter);
+  const [debouncedFilter] = useDebounce(inputValue, 200);
+
+  useEffect(() => {
+    dispatch(setFilter(inputValue));
+  }, [debouncedFilter]);
 
   return (
     <input
       className={style.input}
       placeholder="Find it"
       name="filter"
-      value={filter}
-      onChange={e => dispatch(setFilter(e.target.value))}
+      value={inputValue}
+      onChange={e => setInputValue(e.target.value)}
     />
   );
 };
